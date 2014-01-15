@@ -87,17 +87,10 @@
         });
     }
 
-    var count = 0;
-
     function interpolateGetters(str, context) {
         return str.replace(getterRegExp, function (match, key) {
             var polatedKey = interpolateGetters(key, context),
                 value = get(context, polatedKey);
-                count++;
-
-            if (count > 100) throw new Error('done');
-
-            console.log('>>>>', polatedKey, value);
 
             // Replace with an empty string if value is not set (undefined/null)
             return (isSet(value)) ? value.toString() : '';

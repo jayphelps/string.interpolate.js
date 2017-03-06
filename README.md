@@ -1,3 +1,7 @@
+# No longer maintained.
+
+***
+
 String.interpolate.js v2.0
 =====================
 
